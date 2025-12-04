@@ -1,0 +1,22 @@
+{
+    "name": "Epstein's Phone (Reconstructed)",
+    "short_name": "Epstein Phone",
+    "description": "Browse Epstein estate emails with an iPhone Messages-style interface",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#007AFF",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23007AFF'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='system-ui'%3E📧%3C/text%3E%3C/svg%3E",
+            "sizes": "192x192",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23007AFF'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-family='system-ui'%3E📧%3C/text%3E%3C/svg%3E",
+            "sizes": "512x512",
+            "type": "image/svg+xml"
+        }
+    ]
+}

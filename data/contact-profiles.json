@@ -1,0 +1,244 @@
+{
+  "contacts": {
+    "jeffrey epstein": {
+      "displayName": "Jeffrey Epstein",
+      "image": "Jeffrey Epstein.jpg",
+      "description": "American financier and convicted sex offender",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Jeffrey_Epstein",
+      "profile": "Jeffrey Edward Epstein was an American financier and convicted sex offender. He began his professional life as a teacher but then switched to the banking and finance sector in various roles.",
+      "tags": ["financier", "convicted", "deceased"]
+    },
+    "darren indyke": {
+      "displayName": "Darren Indyke",
+      "image": "Darren Indyke.jpg", 
+      "description": "Attorney and legal advisor",
+      "wikipediaUrl": null,
+      "profile": "Attorney who served as legal counsel and advisor. Known for handling complex legal matters and estate planning.",
+      "tags": ["attorney", "legal", "advisor"]
+    },
+    "deepak chopra": {
+      "displayName": "Deepak Chopra",
+      "image": "Deepak Chopra.jpg",
+      "description": "Indian-American author and alternative medicine advocate",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Deepak_Chopra",
+      "profile": "Deepak Chopra is an Indian-American author and alternative medicine advocate. A prominent figure in the New Age movement, his books and videos have made him one of the best-known and wealthiest figures in alternative medicine.",
+      "tags": ["author", "alternative medicine", "new age"]
+    },
+    "joi ito": {
+      "displayName": "Joi Ito",
+      "image": "Joi Ito.jpg",
+      "description": "Japanese-American venture capitalist and former MIT Media Lab director",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Joi_Ito",
+      "profile": "Joichi Ito is a Japanese-American venture capitalist, entrepreneur, and academic. He was the director of the MIT Media Lab from 2011 to 2019.",
+      "tags": ["venture capitalist", "entrepreneur", "academic", "MIT"]
+    },
+    "kathy ruemmler": {
+      "displayName": "Kathy Ruemmler",
+      "image": "Kathy Ruemmler.jpg",
+      "description": "American lawyer and former White House Counsel",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Kathryn_Ruemmler",
+      "profile": "Kathryn Ruemmler is an American lawyer who served as White House Counsel under President Barack Obama from 2011 to 2014.",
+      "tags": ["lawyer", "white house counsel", "obama administration"]
+    },
+    "ken starr": {
+      "displayName": "Ken Starr",
+      "image": "Ken Starr.jpg",
+      "description": "American lawyer and former independent counsel",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Ken_Starr",
+      "profile": "Kenneth Winston Starr was an American lawyer and judge who as independent counsel authored the Starr Report, which led to the impeachment of Bill Clinton.",
+      "tags": ["lawyer", "judge", "independent counsel", "starr report"]
+    },
+    "landon thomas jr": {
+      "displayName": "Landon Thomas Jr.",
+      "image": "Landon Thomas Jr.jpg",
+      "description": "Financial journalist",
+      "wikipediaUrl": null,
+      "profile": "Financial journalist and reporter covering markets, banking, and economic affairs.",
+      "tags": ["journalist", "financial reporter", "media"]
+    },
+    "lawrence krauss": {
+      "displayName": "Lawrence Krauss",
+      "image": "Lawrence Krauss.jpg",
+      "description": "American theoretical physicist and cosmologist",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Lawrence_M._Krauss",
+      "profile": "Lawrence Maxwell Krauss is an American theoretical physicist and cosmologist who previously taught at Arizona State University, Yale University, and Case Western Reserve University.",
+      "tags": ["physicist", "cosmologist", "academic", "author"]
+    },
+    "lawrence summers": {
+      "displayName": "Lawrence Summers",
+      "image": "Lawrence Summers.jpg",
+      "description": "American economist and former Treasury Secretary",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Lawrence_Summers",
+      "profile": "Lawrence Henry Summers is an American economist who served as the 71st United States Secretary of the Treasury from 1999 to 2001 and as director of the National Economic Council from 2009 to 2010.",
+      "tags": ["economist", "treasury secretary", "harvard president", "government"]
+    },
+    "lesley groff": {
+      "displayName": "Lesley Groff",
+      "image": "Lesley Groff.jpg",
+      "description": "Former executive assistant",
+      "wikipediaUrl": null,
+      "profile": "Former executive assistant and administrator involved in various business operations.",
+      "tags": ["executive assistant", "administrator"]
+    },
+    "lisa new": {
+      "displayName": "Lisa New",
+      "image": "lisa new.jpg",
+      "description": "Professional contact",
+      "wikipediaUrl": null,
+      "profile": "Professional contact and associate in various business matters.",
+      "tags": ["professional", "associate"]
+    },
+    "michael wolff": {
+      "displayName": "Michael Wolff",
+      "image": "Michael Wolff.jpg",
+      "description": "American author and journalist",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Michael_Wolff_(journalist)",
+      "profile": "Michael Wolff is an American author, essayist, journalist, and a regular columnist for USA Today, The Hollywood Reporter, and the British edition of GQ.",
+      "tags": ["author", "journalist", "columnist", "media"]
+    },
+    "noam chomsky": {
+      "displayName": "Noam Chomsky", 
+      "image": "Noam Chomsky.jpg",
+      "description": "American linguist, philosopher, and political activist",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Noam_Chomsky",
+      "profile": "Avram Noam Chomsky is an American linguist, philosopher, cognitive scientist, historical essayist, social critic, and political activist.",
+      "tags": ["linguist", "philosopher", "political activist", "academic", "MIT"]
+    },
+    "robert kuhn": {
+      "displayName": "Robert Kuhn",
+      "image": "Robert Kuhn.jpg",
+      "description": "American investment banker and television host",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Robert_Lawrence_Kuhn",
+      "profile": "Robert Lawrence Kuhn is an American investment banker, author, and television host. He has a doctorate in neuroscience and is known for his work in China-US relations.",
+      "tags": ["investment banker", "author", "television host", "neuroscience"]
+    },
+    "steve bannon": {
+      "displayName": "Steve Bannon",
+      "image": "Steve Bannon.jpg",
+      "description": "American media executive and political strategist",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Steve_Bannon",
+      "profile": "Stephen Kevin Bannon is an American media executive, political strategist, and former investment banker who served as the White House's chief strategist in the administration of U.S. president Donald Trump.",
+      "tags": ["media executive", "political strategist", "trump administration", "breitbart"]
+    },
+    "sultan bin sulayem": {
+      "displayName": "Sultan bin Sulayem",
+      "image": "Sultan Bin Sulayem.jpg",
+      "description": "Emirati businessman and government official",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Sultan_Ahmed_bin_Sulayem",
+      "profile": "Sultan Ahmed bin Sulayem is an Emirati businessman who is the group chairman and CEO of DP World and chairman of Virgin Hyperloop One.",
+      "tags": ["businessman", "CEO", "DP World", "UAE"]
+    },
+    "weingarten, reid": {
+      "displayName": "Reid Weingarten",
+      "image": "Weingarten, Reid.jpg",
+      "description": "American defense attorney",
+      "wikipediaUrl": null,
+      "profile": "Reid Weingarten is a prominent American defense attorney known for representing high-profile clients in white-collar criminal cases.",
+      "tags": ["defense attorney", "white collar crime", "legal"]
+    },
+    "g maxwell": {
+      "displayName": "Ghislaine Maxwell",
+      "image": null,
+      "description": "British socialite and convicted sex trafficker",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Ghislaine_Maxwell",
+      "profile": "Ghislaine Noelle Marion Maxwell is a British former socialite and convicted sex offender. She was found guilty in 2021 of child sex trafficking and other offences.",
+      "tags": ["socialite", "convicted", "sex trafficking"]
+    },
+    "eric roth": {
+      "displayName": "Eric Roth",
+      "image": null,
+      "description": "Contact information to be added",
+      "wikipediaUrl": null,
+      "profile": "Profile information to be researched and added.",
+      "tags": ["contact"]
+    },
+    "nadia <nadja2102@yahoo.com>": {
+      "displayName": "Nadia",
+      "image": null,
+      "description": "Contact information to be added",
+      "wikipediaUrl": null,
+      "profile": "Profile information to be researched and added.",
+      "tags": ["contact"]
+    },
+    "christina galbraith": {
+      "displayName": "Christina Galbraith",
+      "image": null,
+      "description": "Contact information to be added",
+      "wikipediaUrl": null,
+      "profile": "Profile information to be researched and added.",
+      "tags": ["contact"]
+    },
+    "tyler shears": {
+      "displayName": "Tyler Shears",
+      "image": null,
+      "description": "Contact information to be added",
+      "wikipediaUrl": null,
+      "profile": "Profile information to be researched and added.",
+      "tags": ["contact"]
+    },
+    "vinit sahni": {
+      "displayName": "Vinit Sahni",
+      "image": null,
+      "description": "Contact information to be added",
+      "wikipediaUrl": null,
+      "profile": "Profile information to be researched and added.",
+      "tags": ["contact"]
+    },
+    "larry": {
+      "displayName": "Larry",
+      "image": null,
+      "description": "Contact information to be added",
+      "wikipediaUrl": null,
+      "profile": "Profile information to be researched and added.",
+      "tags": ["contact"]
+    },
+    "mohamed waheed hassan": {
+      "displayName": "Mohamed Waheed Hassan",
+      "image": null,
+      "description": "Contact information to be added",
+      "wikipediaUrl": null,
+      "profile": "Profile information to be researched and added.",
+      "tags": ["contact"]
+    },
+    "jay lefkowitz": {
+      "displayName": "Jay Lefkowitz",
+      "image": null,
+      "description": "Contact information to be added",
+      "wikipediaUrl": null,
+      "profile": "Profile information to be researched and added.",
+      "tags": ["contact"]
+    },
+    "al seckel": {
+      "displayName": "Al Seckel",
+      "image": null,
+      "description": "Contact information to be added",
+      "wikipediaUrl": null,
+      "profile": "Profile information to be researched and added.",
+      "tags": ["contact"]
+    },
+    "daniel siad": {
+      "displayName": "Daniel Siad",
+      "image": null,
+      "description": "Contact information to be added",
+      "wikipediaUrl": null,
+      "profile": "Profile information to be researched and added.",
+      "tags": ["contact"]
+    },
+    "peter thiel": {
+      "displayName": "Peter Thiel",
+      "image": "Peter Thiel.jpg",
+      "description": "Contact information to be added",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Peter_Thiel",
+      "profile": "Profile information to be researched and added.",
+      "tags": ["contact"]
+    },
+    "jessica cadwell": {
+      "displayName": "Jessica Cadwell",
+      "image": null,
+      "description": "Contact information to be added",
+      "wikipediaUrl": null,
+      "profile": "Profile information to be researched and added.",
+      "tags": ["contact"]
+    }
+  }
+}

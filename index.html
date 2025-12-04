@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Epstein's Phone (Reconstructed)</title>
+    <link rel="icon" type="image/png" href="data/website-icon-phone.png">
+    <link rel="apple-touch-icon" href="data/website-icon-phone.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Disclaimer Modal -->
+    <div id="disclaimerModal" class="disclaimer-modal">
+        <div class="disclaimer-backdrop"></div>
+        <div class="disclaimer-card">
+            <div class="disclaimer-header">
+                <h2>About This Project</h2>
+            </div>
+            
+            <div class="disclaimer-content">
+                <p>What you're about to see is a fantasy representation of Jeffrey Epstein's phone. The messages displayed are based on email documents officially released by the <strong>U.S. House Committee on Oversight and Government Reform on November 12, 2025</strong> (<a href="https://oversight.house.gov/release/oversight-committee-releases-additional-epstein-estate-documents/" target="_blank">source</a>).</p>
+                
+                <p>The documents linked in the Documents app were officially released by the <strong>U.S. House Committee on Oversight and Government Reform on September 8, 2025</strong> as part of records provided by the Epstein Estate (<a href="https://oversight.house.gov/release/oversight-committee-releases-records-provided-by-the-epstein-estate-chairman-comer-provides-statement/" target="_blank">source</a>).</p>
+                
+                <h3>Who am I?</h3>
+                <p>My name is Toon, and I like data science. When I looked through some samples of the released files, I noticed that the emails sent back and forth were usually one-liners, making it difficult to keep track of the conversations. I thought it would be useful to extract the messages themselves and represent them as if they were sent in a messenger app—making them easier to follow and understand.</p>
+                
+                <p>For questions, feedback, bug reports, or collaboration inquiries, feel free to reach out at: <a href="mailto:toon@neontreebot.be">toon@neontreebot.be</a></p>
+                
+                <h3>Data Processing & Accuracy</h3>
+                <p>I did my utmost best for the data to stay faithful to the source documents. The messages were extracted using Vision AI (Large Language Models) from screenshot images of the original emails. However, it's inevitable that some mistakes, omissions, or misinterpretations are present. Many messages were redacted and not included.Despite these limitations, I believe this project is valuable because it provides easier access to and navigation of the released files.</p>
+                
+                <p>When you right-click (desktop) or long-press (mobile) on any message, you have the option to view the original source document it was extracted from—so you can always verify the information yourself.</p>
+                
+                <h3>Important Disclaimers</h3>
+                
+                <div class="disclaimer-warning">
+                    <p>⚠️ <strong>Not Official</strong>: This is an independent, self-funded personal project and is not affiliated with, endorsed by, or officially connected to the U.S. House of Representatives, the Committee on Oversight and Government Reform, or any government entity. I have not been paid, sponsored, or compensated in any way to create this. This project is not affiliated with any journalistic outlet, news organization, or media company.</p>
+                </div>
+                
+                <div class="disclaimer-warning">
+                    <p>⚠️ <strong>Data Accuracy</strong>: All data has been processed using automated AI tools. Despite careful processing, errors and inaccuracies may occur. Users are strongly encouraged to verify information by consulting the original source documents (accessible via right-click/long-press on messages).</p>
+                </div>
+                
+                <div class="disclaimer-warning">
+                    <p>⚠️ <strong>No Warranties</strong>: This project is provided "AS-IS" without any warranties or guarantees of accuracy, completeness, or reliability. I assume no liability for any errors, omissions, or consequences arising from the use of this information.</p>
+                </div>
+                
+                <div class="disclaimer-warning">
+                    <p>⚠️ <strong>Educational Purpose</strong>: This project is for research, educational, and informational purposes only. All source data comes from official government releases and is in the public domain.</p>
+                </div>
+                
+                <div class="disclaimer-warning">
+                    <p>⚠️ <strong>Sensitive Content</strong>: The conversations displayed may contain references to mature topics and controversial subject matter. Viewer discretion is advised.</p>
+                </div>
+                
+                <div class="disclaimer-warning">
+                    <p>⚠️ <strong>Fair Use</strong>: Profile pictures and images used are either public domain or used under fair use for educational purposes. Full attribution is available in the project repository.</p>
+                </div>
+                
+                <div class="disclaimer-warning">
+                    <p>⚠️ <strong>Future Updates</strong>: This is a work-in-progress. The data processing pipeline will be open-sourced in the future, allowing full transparency into the extraction methodology.</p>
+                </div>
+            </div>
+            
+            <div class="disclaimer-footer">
+                <button id="disclaimerAccept" class="disclaimer-button primary">I Understand</button>
+                <button id="disclaimerCancel" class="disclaimer-button secondary">Cancel</button>
+            </div>
+            
+            <div id="disclaimerWarning" class="disclaimer-cancel-warning" style="display: none;">
+                <p>⚠️ You must accept the disclaimer to continue using this application.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="disclaimer-modal hidden">
+        <div class="disclaimer-backdrop"></div>
+        <div class="disclaimer-card">
+            <div class="disclaimer-header">
+                <h2>📱 About <em>Epstein's Phone (Reconstructed)</em></h2>
+            </div>
+            
+            <div class="disclaimer-content">
+                <p><em>A public-interest, independent data project based entirely on official U.S. House Oversight document releases.</em></p>
+                
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;">
+                
+                <h3>🧩 What This Project Is</h3>
+                
+                <p><strong>Epstein's Phone (Reconstructed)</strong> is a two-part research project:</p>
+                
+                <h4>1. A Structured Message Dataset</h4>
+                
+                <p>A data-science pipeline processed <strong>23,124 images</strong> and thousands of OCR text files released by the <strong>U.S. House Committee on Oversight and Government Reform</strong> in 2025.</p>
+                
+                <p>Using a combination of OCR cleanup, vision-LLM extraction, name normalization, timestamp reconstruction, and thread mapping, these public images were transformed into a clean, coherent <strong>SQLite message database</strong>.</p>
+                
+                <p>This structured dataset contains:</p>
+                <ul>
+                    <li>sender / recipient fields</li>
+                    <li>subjects and thread boundaries</li>
+                    <li>message timestamps (raw + normalized)</li>
+                    <li>cleaned text + extracted HTML content</li>
+                    <li>links back to every original document page</li>
+                </ul>
+                
+                <p>No private data, leaks, or hacked materials were used. Every item in this database originates <strong>only</strong> from public, government-released files.</p>
+                
+                <h4>2. An iPhone-Style Messages Interface</h4>
+                
+                <p>The second part is an interactive, mobile-first <strong>simulation of a phone inbox</strong>, designed to make the dataset readable to the public.</p>
+                
+                <p>Built as a <strong>Progressive Web App</strong>, the interface provides:</p>
+                <ul>
+                    <li>an iPhone-style Messages layout</li>
+                    <li>contact list, timestamps, and thread separators</li>
+                    <li>chat-bubble rendering for senders and recipients</li>
+                    <li>long-press context menus</li>
+                    <li>links to original document JPGs</li>
+                    <li>full offline support via service worker</li>
+                    <li>installation like a native app (no backend required)</li>
+                </ul>
+                
+                <p>This front-end is intentionally familiar and intuitive: a way to <strong>navigate thousands of messages in seconds</strong>, using a format most people already understand.</p>
+                
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;">
+                
+                <h3>🎯 Purpose</h3>
+                
+                <p>The Epstein document releases are technically public but practically inaccessible due to their scale, formatting, and lack of structure.</p>
+                
+                <p>This project aims to:</p>
+                <ul>
+                    <li><strong>make public data actually accessible</strong></li>
+                    <li>support <strong>journalists, researchers, lawyers, and the general public</strong></li>
+                    <li>reduce the friction of parsing thousands of screenshots</li>
+                    <li>demonstrate how independent data science can support transparency</li>
+                    <li>encourage accountable, evidence-based reporting</li>
+                </ul>
+                
+                <p>The project itself takes no position on the content of the messages. Its goal is <strong>accessibility</strong>, <strong>verifiability</strong>, and <strong>readability</strong>.</p>
+                
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;">
+                
+                <h3>⚠️ Important Clarifications</h3>
+                
+                <ul>
+                    <li>This is <strong>not</strong> Epstein's real phone.</li>
+                    <li>It is <strong>not</strong> based on leaks or private/hacked materials.</li>
+                    <li>It is a <strong>reconstruction</strong> derived exclusively from public House Oversight records.</li>
+                    <li>Every message includes a link to its <strong>original government source file</strong> for verification.</li>
+                    <li>Errors may exist due to OCR, image quality, or LLM extraction limits.</li>
+                    <li>Not everything could be reconstructed, it is not complete.</li>
+                    <li>Messages sent across time zones may have inconsistent timestamps.</li>
+                </ul>
+                
+                <p>Users are encouraged to cross-check anything important against the original documents.</p>
+                
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;">
+                
+                <h3>🧠 How the Reconstruction Works</h3>
+                
+                <p>The dataset was built using a multi-stage extraction pipeline:</p>
+                
+                <ol>
+                    <li><strong>Image + OCR ingestion</strong> of all released pages</li>
+                    <li><strong>Vision-LLM reading</strong> of email screenshots</li>
+                    <li><strong>Extraction</strong> of sender/recipient metadata, subjects, timestamps, and message bodies</li>
+                    <li><strong>Normalization & cleaning</strong> (names, time formats, duplicates)</li>
+                    <li><strong>Thread reconstruction</strong> based on temporal + subject structure</li>
+                    <li><strong>SQLite packaging</strong> for fast, offline client-side use</li>
+                    <li><strong>Frontend rendering</strong> in a Messages-style interface</li>
+                </ol>
+                
+                <p>All processing steps are fully documented in the repository.</p>
+                
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;">
+                
+                <h3>🔓 Open Source</h3>
+                
+                <p>The full codebase, pipeline, and dataset were made open for public inspection:</p>
+                
+                <p>👉 <strong>GitHub Repository</strong><br><em><a href="https://github.com/Toon-nooT/epsteins-phone-reconstructed" target="_blank">https://github.com/Toon-nooT/epsteins-phone-reconstructed</a></em></p>
+                
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;">
+                
+                <h3>👤 About the Creator</h3>
+                
+                <p>This project was built by an independent data scientist interested in:</p>
+                <ul>
+                    <li>document forensics</li>
+                    <li>transparency technology</li>
+                    <li>large-scale OCR + LLM extraction</li>
+                    <li>building tools that help the public make sense of complex data</li>
+                </ul>
+                
+                <p>For questions, collaborations, or feedback:</p>
+                <ul>
+                    <li>📧 Email: <a href="mailto:toon@neontreebot.be">toon@neontreebot.be</a></li>
+                    <li>🔗 LinkedIn: <a href="https://www.linkedin.com/in/toonbeerten/" target="_blank">https://www.linkedin.com/in/toonbeerten/</a></li>
+                    <li>🌐 Website: <a href="https://neontreebot.be" target="_blank">https://neontreebot.be</a></li>
+                </ul>
+                
+                <hr style="margin: 20px 0; border: none; border-top: 1px solid #e0e0e0;">
+                
+                <h3>📝 Disclaimer</h3>
+                
+                <p>This tool is provided for research and informational purposes only. It offers no warranties and makes no claims of completeness or accuracy.</p>
+            </div>
+            
+            <div class="disclaimer-footer">
+                <button id="aboutModalOk" class="disclaimer-button primary">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- iPhone Device Frame -->
+    <div class="iphone-frame">
+        <!-- Lock Screen Overlay -->
+        <div id="lockScreen" class="lock-screen">
+            <div class="lock-screen-content">
+                <div class="lock-icon">🔒</div>
+                <div class="lock-text">Phone Locked</div>
+                <div class="lock-subtext">Tap To Open</div>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-left">
+                <span id="statusTime" class="status-time">9:41</span>
+            </div>
+            <div class="status-notch"></div>
+            <div class="status-right">
+                <svg class="status-icon" width="17" height="12" viewBox="0 0 17 12">
+                    <path d="M0 2C0 0.895431 0.895431 0 2 0H3C4.10457 0 5 0.895431 5 2V10C5 11.1046 4.10457 12 3 12H2C0.895431 12 0 11.1046 0 10V2Z" fill="currentColor"/>
+                    <path d="M6 3C6 1.89543 6.89543 1 8 1H9C10.1046 1 11 1.89543 11 3V9C11 10.1046 10.1046 11 9 11H8C6.89543 11 6 10.1046 6 9V3Z" fill="currentColor"/>
+                    <path d="M12 4C12 2.89543 12.8954 2 14 2H15C16.1046 2 17 2.89543 17 4V8C17 9.10457 16.1046 10 15 10H14C12.8954 10 12 9.10457 12 8V4Z" fill="currentColor" fill-opacity="0.4"/>
+                </svg>
+                <svg class="status-icon" width="20" height="12" viewBox="0 0 20 12">
+                    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="600" fill="currentColor">4G</text>
+                </svg>
+                <div class="battery-icon">
+                    <div class="battery-level"></div>
+                    <div class="battery-tip"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- App Content -->
+        <div class="app-content">
+            <!-- Homescreen View -->
+            <div id="homescreenView" class="view active">
+                <div class="homescreen-container">
+                    <div class="app-grid">
+                        <div class="app-icon" data-app="messages">
+                            <div class="app-icon-image">📧</div>
+                            <div class="app-icon-label">Messages</div>
+                        </div>
+                        <div class="app-icon" data-app="photos">
+                            <div class="app-icon-image">📷</div>
+                            <div class="app-icon-label">Photos</div>
+                        </div>
+                        <div class="app-icon" data-app="documents">
+                            <div class="app-icon-image">📄</div>
+                            <div class="app-icon-label">Documents</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="homescreen-footer">
+                    <div class="app-icon" data-app="about">
+                        <div class="app-icon-image">ⓘ</div>
+                        <div class="app-icon-label">About</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photos View -->
+            <div id="photosView" class="view">
+                <header class="ios-header">
+                    <button id="photosBackButton" class="back-button">
+                        <svg width="13" height="21" viewBox="0 0 13 21" fill="none">
+                            <path d="M10 3L3 10.5L10 18" stroke="#007AFF" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <h1>📷 Photos</h1>
+                </header>
+                
+                <div class="photos-container">
+                    <div class="empty-state">
+                        <div style="font-size: 64px; margin-bottom: 16px;">📷</div>
+                        <h3>Photos Not Yet Available</h3>
+                        <p style="margin-top: 16px; font-size: 14px;">Photo gallery functionality may be added in the future.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents View -->
+            <div id="documentsView" class="view">
+                <header class="ios-header">
+                    <button id="documentsBackButton" class="back-button">
+                        <svg width="13" height="21" viewBox="0 0 13 21" fill="none">
+                            <path d="M10 3L3 10.5L10 18" stroke="#007AFF" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <h1>📄 Documents</h1>
+                </header>
+                
+                <div class="documents-container">
+                    <div class="document-list">
+                        <a href="https://d3i6fh83elv35t.cloudfront.net/static/2025/09/Request-No.-1.pdf" target="_blank" class="document-item">
+                            <div class="document-icon">📖</div>
+                            <div class="document-info">
+                                <div class="document-title">The First Fifty Years, My Birthday Book</div>
+                            </div>
+                            <div class="document-arrow">
+                                <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
+                                    <path d="M2 2L8 8L2 14" stroke="#C7C7CC" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </a>
+                        
+                        <a href="https://drive.google.com/file/d/1kjRqGkhpBweA35xiMIdZfv0vo54kQ3uq/view?usp=sharing" target="_blank" class="document-item">
+                            <div class="document-icon">📜</div>
+                            <div class="document-info">
+                                <div class="document-title">Last Will and Testament</div>
+                            </div>
+                            <div class="document-arrow">
+                                <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
+                                    <path d="M2 2L8 8L2 14" stroke="#C7C7CC" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </a>
+                        
+                        <a href="https://drive.google.com/file/d/1kWhiZSNvJM0t8vO6Rx3fLlboZ5ejjhCe/view?usp=sharing" target="_blank" class="document-item">
+                            <div class="document-icon">🔍</div>
+                            <div class="document-info">
+                                <div class="document-title">Investigation</div>
+                            </div>
+                            <div class="document-arrow">
+                                <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
+                                    <path d="M2 2L8 8L2 14" stroke="#C7C7CC" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </a>
+                        
+                        <a href="https://drive.google.com/file/d/1Q9bv7RXtlktsiHyfQa-gOvXkIl2Td8B6/view?usp=sharing" target="_blank" class="document-item">
+                            <div class="document-icon">📋</div>
+                            <div class="document-info">
+                                <div class="document-title">Exhibit 10 Part 2</div>
+                            </div>
+                            <div class="document-arrow">
+                                <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
+                                    <path d="M2 2L8 8L2 14" stroke="#C7C7CC" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact List View -->
+            <div id="contactListView" class="view">
+        <header class="ios-header">
+            <button id="contactsBackButton" class="back-button">
+                <svg width="13" height="21" viewBox="0 0 13 21" fill="none">
+                    <path d="M10 3L3 10.5L10 18" stroke="#007AFF" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <h1>📧 My Messages</h1>
+            <div class="owner-profile-pic">
+                <img src="data/profile_pics/Jeffrey Epstein.jpg" alt="Owner" class="owner-avatar">
+            </div>
+        </header>
+        
+        <div class="search-bar">
+            <div class="search-input-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search" disabled>
+            </div>
+        </div>
+        
+        <div id="contactList" class="contact-list">
+            <div class="loading">Loading contacts...</div>
+        </div>
+    </div>
+
+    <!-- Conversation View -->
+    <div id="conversationView" class="view">
+        <header class="ios-header conversation-header">
+            <button id="backButton" class="back-button">
+                <svg width="13" height="21" viewBox="0 0 13 21" fill="none">
+                    <path d="M10 3L3 10.5L10 18" stroke="#007AFF" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div id="conversationAvatar" class="conversation-avatar"></div>
+            <h2 id="conversationContactName"></h2>
+        </header>
+        
+        <div id="messageContainer" class="message-container">
+            <div class="loading">Loading messages...</div>
+        </div>
+    </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="lib/sql-wasm.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/contacts.js"></script>
+    <script src="js/messages.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Update status bar clock
+        function updateStatusClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            document.getElementById('statusTime').textContent = `${hours}:${minutes}`;
+        }
+        
+        // Update immediately and then every minute
+        updateStatusClock();
+        setInterval(updateStatusClock, 60000);
+    </script>
+    <script data-goatcounter="https://epsteinsphonereconstructed.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
